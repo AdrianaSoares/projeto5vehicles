@@ -1,8 +1,8 @@
-def cond_fuel(cond, fuel):
+def cond_fuel(df, cond, fuel):
     df_fuel = df[df['fuel'] == fuel]
     df_cond = df_fuel[df_fuel['condition'] == cond]
 
-    return df_cond['model']
+    return df
 
 
 def dropar_dados_faltantes(df, coluna, limite_dados_faltantes):
@@ -12,7 +12,7 @@ def dropar_dados_faltantes(df, coluna, limite_dados_faltantes):
     return df
 
 
-def limpar_outlier(df, coluna):
+def outlier(df, coluna):
     media = df[coluna].mean()  # calculo da média
     dp = df[coluna].std()  # desvio padrão
     ls = media + 2*dp  # limite superior
