@@ -7,6 +7,6 @@ df = pd.read_csv(Path("data/vehicles.csv"))
 
 st.title("Análise de Vendas de Automóveis")
 
-fig = px.histogram(df, x='price', color='fuel')
+fig = px.histogram(df, x='price', color='condition')
 
 st.plotly_chart(fig)
