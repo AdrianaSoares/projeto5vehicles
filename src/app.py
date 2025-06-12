@@ -43,7 +43,6 @@ if build_histogram:  # se a caixa de seleção for selecionada
     st.write('Criando um histograma para a coluna odometer')
 
 
-ver_data = pd.read_csv(Path("data/vehicles.csv"))  # lendo os dados
-chart_data = ver_data[ver_data['fuel'] == 'good']
-
-st.bar_chart(chart_data)
+df_fuel_query = df.query("fuel == 'gas'")[['model', 'condition']]
+st.bar_chart(df_fuel_query, x="model", y="condition",
+             color="site", stack=False)
