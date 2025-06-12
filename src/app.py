@@ -41,3 +41,9 @@ build_histogram = st.checkbox('Criar um histograma')
 
 if build_histogram:  # se a caixa de seleção for selecionada
     st.write('Criando um histograma para a coluna odometer')
+
+
+ver_data = pd.read_csv(Path("data/vehicles.csv"))  # lendo os dados
+chart_data = ver_data['fuel']
+
+st.bar_chart(chart_data)
