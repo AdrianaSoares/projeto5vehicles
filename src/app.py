@@ -44,6 +44,6 @@ if build_histogram:  # se a caixa de seleção for selecionada
 
 
 ver_data = pd.read_csv(Path("data/vehicles.csv"))  # lendo os dados
-chart_data = ver_data['fuel']
+chart_data = ver_data[ver_data['fuel'] == 'good']
 
 st.bar_chart(chart_data)
