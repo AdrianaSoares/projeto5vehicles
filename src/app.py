@@ -44,5 +44,4 @@ if build_histogram:  # se a caixa de seleção for selecionada
 
 
 df_fuel_query = df.query("fuel == 'gas'")[['model', 'condition']]
-st.bar_chart(df_fuel_query, x="model", y="condition",
-             color="site", stack=False)
+st.bar_chart(df_fuel_query, x="model", y="condition", stack=False)
