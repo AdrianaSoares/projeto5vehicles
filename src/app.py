@@ -1,7 +1,11 @@
+# importando bibliotecas
+
 import pandas as pd
+from matplotlib import pyplot as plt
 from pathlib import Path
 import streamlit as st
 import plotly_express as px
+
 
 df = pd.read_csv(Path("data/vehicles.csv"))
 
