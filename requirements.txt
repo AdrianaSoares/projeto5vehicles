@@ -1,0 +1,5 @@
+pandas
+matplotlib
+pathlib
+streamlit
+plotly_express
