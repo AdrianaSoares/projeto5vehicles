@@ -12,10 +12,6 @@ df = funcoes.dropar_dados_faltantes(df, 'price', 0.1)
 df = funcoes.cond_fuel(df, 'good', 'gas')
 df = funcoes.outlier(df, 'price')
 
-df_funcoes_cond_fuel = funcoes.cond_fuel(df, 'good', 'gas')
-fig = px.histogram(df_funcoes_cond_fuel, x='price', color='condition')
-st.plotly_chart(fig)
-
 
 st.title("Análise de Vendas de Automóveis")
 fig_df = px.histogram(df, x='price', color='condition')
