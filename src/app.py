@@ -42,7 +42,4 @@ build_histogram = st.checkbox('Criar um histograma')
 if build_histogram:  # se a caixa de seleção for selecionada
     st.write('Criando um histograma para a coluna odometer')
 
-
-df_fuel_query = df.query("fuel == 'gas'")[['model', 'condition']]
-chart_data = pd.df_fuel_query(columns=["model", "condition"])
-st.bar_chart(chart_data)
+plt.bar(df['fuel'], df['condition'], color='skyblue')
