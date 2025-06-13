@@ -42,4 +42,14 @@ build_histogram = st.checkbox('Criar um histograma')
 if build_histogram:  # se a caixa de seleção for selecionada
     st.write('Criando um histograma para a coluna odometer')
 
-plt.bar(df['fuel'], df['condition'], color='skyblue')
+
+# Criando o gráfico de barras
+plt.bar(df['fuel'], df['condition'], color='red')
+
+# Adicionando título e rótulos
+plt.title('Fuel/Condition', fontsize=14)
+plt.xlabel('Condition', fontsize=12)
+plt.ylabel('Fuel', fontsize=12)
+
+# Exibindo o gráfico
+plt.show()
