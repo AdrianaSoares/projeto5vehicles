@@ -45,10 +45,17 @@ if build_histogram:  # se a caixa de seleção for selecionada
 
 # Criando o gráfico para coluna cylinders/price
 
-df[df['cylinders'] == 6]['price'].plot(kind='hist', bins=30)
-df[df['cylinders'] == 4]['price'].plot(kind='hist', bins=30, alpha=0.8)
-plt.title('cylinders/price')
-plt.legend(['cylinder=6', 'cylinder=4'])
+cylinder6 = df[df['cylinders'] == 6]['price']
+button_cylinders = st.button(
+    'Criar histograma para cylinders 6 e 4')  # criar um botão
 
-# Exibindo o gráfico
-plt.show()
+if button_cylinders:  # se o botão for clicado
+    # escrever uma mensagem
+    st.write(
+        'Criando um histograma para o conjunto de dados de cylinders 6 e 4')
+
+    # criar um histograma
+    fig = px.histogram(cylinder6, x="price")
+
+    # exibir um gráfico Plotly interativo
+    st.plotly_chart(fig, use_container_width=True)
