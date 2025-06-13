@@ -43,13 +43,12 @@ if build_histogram:  # se a caixa de seleção for selecionada
     st.write('Criando um histograma para a coluna odometer')
 
 
-# Criando o gráfico de barras
-plt.bar(df['fuel'], df['condition'], color='red')
+# Criando o gráfico para coluna cylinders/price
 
-# Adicionando título e rótulos
-plt.title('Fuel/Condition', fontsize=14)
-plt.xlabel('Condition', fontsize=12)
-plt.ylabel('Fuel', fontsize=12)
+df[df['cylinders'] == 6]['price'].plot(kind='hist', bins=30)
+df[df['cylinders'] == 4]['price'].plot(kind='hist', bins=30, alpha=0.8)
+plt.title('cylinders/price')
+plt.legend(['cylinder=6', 'cylinder=4'])
 
 # Exibindo o gráfico
 plt.show()
