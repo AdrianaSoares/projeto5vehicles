@@ -41,21 +41,3 @@ build_histogram = st.checkbox('Criar um histograma')
 
 if build_histogram:  # se a caixa de seleção for selecionada
     st.write('Criando um histograma para a coluna odometer')
-
-
-# Criando o gráfico para coluna cylinders/price
-
-cylinder6 = df[df['cylinders'] == 6]['price']
-button_cylinders = st.button(
-    'Criar histograma para cylinders 6 e 4')  # criar um botão
-
-if button_cylinders:  # se o botão for clicado
-    # escrever uma mensagem
-    st.write(
-        'Criando um histograma para o conjunto de dados de cylinders 6 e 4')
-
-    # criar um histograma
-    fig = px.histogram(cylinder6, x="price")
-
-    # exibir um gráfico Plotly interativo
-    st.plotly_chart(fig, use_container_width=True)
